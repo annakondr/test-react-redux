@@ -11,8 +11,11 @@
     "test": "cross-env NODE_ENV=test karma start build/karma.config",
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://annakondr.github.io/test-react-redux/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davezuko/react-redux-starter-kit.git"
@@ -23,6 +26,7 @@
     "bootstrap": "^4.0.0-alpha",
     "compression": "^1.6.2",
     "express": "^4.14.0",
+    "gh-pages": "^2.0.1",
     "object-assign": "^4.1.1",
     "promise": "^7.1.1",
     "prop-types": "^15.5.10",
