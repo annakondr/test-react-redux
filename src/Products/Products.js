@@ -54,30 +54,28 @@ export const Products = () => {
       <hr />
       <div className="main-block">
         {
-          fakeProductsData['product-catalog']
-            .map(i => filterProductsByCategory(i.name)
-              .map(a => (
-                <div className="product-card" key={a.image}>
-                    <a href="#" style={{backgroundImage: `url(${a.image})`}} className="product-img">
-                       <div className="hover">
-                        <div className="hover-upper">
-                          Product details
-                        </div>
-                        <div className="hover-lower">
-                          Pick this
-                        </div>
-                        <div style={{backgroundImage: `url(${a.image})`}} className="product-img-display">
-                        </div>
-                      </div>
-                    </a>
-
-                  <div className="text" key={a.name}>
-                    <p className="product-name" key={a.id}>{a.name}</p>
-                    <p className="product-price" key={a.price}>STARTING AT {a.price}</p>
+          filterProductsByCategory(selectedCategory).map(a => (
+              <div className="product-card" key={a.image}>
+                <a href="#" style={{backgroundImage: `url(${a.image})`}} className="product-img">
+                  <div className="hover">
+                    <div className="hover-upper">
+                      Product details
+                    </div>
+                    <div className="hover-lower">
+                      Pick this
+                    </div>
+                    <div style={{backgroundImage: `url(${a.image})`}} className="product-img-display">
+                    </div>
                   </div>
+                </a>
+
+                <div className="text" key={a.name}>
+                  <p className="product-name" key={a.id}>{a.name}</p>
+                  <p className="product-price" key={a.price}>STARTING AT {a.price}</p>
                 </div>
-              )
-            ))
+              </div>
+            )
+          )
         }
       </div>
     </div>
